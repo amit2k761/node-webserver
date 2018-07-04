@@ -41,8 +41,13 @@ resp.render('about.hbs',{
 app.get('/bad',(req,resp)=>{
     resp.send({
         error : 'unable to send resp'
-    })
-})
+    });
+});
+app.get('/projects',(req,resp)=>{
+resp.render('projects.hbs',{
+    pagetitle :'projects'
+});
+});
 // bind the appl to a port on machine
 app.listen(port,()=>{
     console.log(`server is running on ${port}`);
